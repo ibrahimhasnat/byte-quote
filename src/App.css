@@ -1,38 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&family=Ubuntu+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
+  line-height: 24px;
+}
+
 .App {
+  height: 100vh;
+  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+}
+
+.app-header {
   text-align: center;
+  padding-top: 50px;
+  line-height: 1;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header h1 {
+  font-size: 45px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.info {
+  position: absolute;
+  right: 50px;
+  top: 50px;
   color: white;
+  display: none;
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff; 
+  padding: 5px 10px;
+  border-radius: 3px;
+  width: 300px;
 }
 
-.App-link {
-  color: #61dafb;
+.info span {
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (min-width: 991px) {
+  .info {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Category CSS */
+
+.category {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-top: 150px;
+}
+
+.category a {
+  width: 550px;  
+  background-color: salmon;
+  font-size: 36px;
+  color: white;
+  border-radius: 3px;
+  padding: 25px 50px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.category a:nth-child(even) {
+  background-color: cadetblue;
+}
+
+.category a:hover {
+  transform: scale(1.1);
+}
+
+/* Quote CSS */
+
+.quote-card {
+  font-family: 'Ubuntu Mono', monospace;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
+  padding: 45px;
+  background-color: darkcyan;
+  color: white;
+  border-radius: 3px;
+  position: relative;
+}
+
+.quote-card h4 {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.quote-card h4::before {
+  position: absolute;
+  content: "\"";
+  font-size: 100px;
+  left: -35px;
+  top: 15px;
+  opacity: 0.2;
+}
+
+/* Preloader CSS */
+.preloader {
+  display: flex;
+  width: 100px;
+  margin: auto;
+  margin-top: 200px;
+}
+
+
+/* Button CSS */
+.go-home {
+  background: transparent;
+  font-size: 26px;
+  padding: 7px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  text-align: center;
+  margin: auto;
+  color: white;
+  margin-top: 25px;
+  display: block;
+}
+
+/* Options CSS */
+
+.options {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  z-index: 99;
+}
+
+.options button, .options a, .options span {
+  padding: 7px 15px;
+  border-radius: 3px; 
+  display: block;
+  font-size: 18px;
+  text-align: center;     
+}
+
+.options button {
+  border: none;
+  cursor: pointer;
+  background-color: #cff4fc;
+  color: #055160;
+  transition: 0.2s;
+}
+
+.options button:active {
+  transform: scale(0.95);
+}
+
+.options a {
+  background-color: #1DA1F2;
+  color: white;
+  text-decoration: none;
+}
+
+.options span {
+  color: white;
+  background-color: red;
 }
